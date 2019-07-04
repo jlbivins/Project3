@@ -11,7 +11,7 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
-    questionairs: {
+    questionnaires: {
         type: Schema.Types.ObjectId,
         ref: "Questions"
     }
