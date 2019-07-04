@@ -1,31 +1,24 @@
 const express = require("express");
-const parser = require("body-parser");
-const path = require("path");
 
 const mongoose = require("mongoose");
-
-const http = require("http");
-
+const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-let db = require("./models");
-
-app.use(express.urlencoded({ extended: false }));
+// Define middleware here
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+// Serve up static assets (usually on heroku)
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
+// Add routes, both API and view
+app.use(routes);
 
-app.use(parser.urlencoded({ extended: true }));
-app.use(parser.json());
+// Connect to the Mongo DB
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist");
 
-app.use(express.static(path.join(__dirname, 'build')));
-
-mongoose.connect("mongodb://localhost/mernProject", {useNewUrlParser: truew});
-
-app.listen(PORT, function () {
-    console.log(
-        "Listening on port %s",
-        PORT
-    );
+// Start the API server
+app.listen(PORT, function() {
+  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
-
-module.exports = app;
