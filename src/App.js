@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Login from "./components/login";
-import SignUp from "./components/signUp";
-import Main from './components/main';
-import Questionnaire from './components/questionnaire';
-import NotFound from './components/notFound';
+import Login from "./pages/login";
+import SignUp from "./pages/signUp";
+import Main from './pages/main';
+import Questionnaire from './pages/questionnaire';
+import NotFound from './pages/notFound';
 
 function App() {
   return (
