@@ -19,15 +19,9 @@ const ChildrenSchema = new Schema({
         required: true
     },
     nextQuestion: {
-        type: String
-    },
-    answerType: {
-        type: String
-    },
-    children: {
         type: Schema.Types.Mixed
     }
-});
+}, {strict: false});
 
 const Questions = mongoose.model("Questions", QuestionSchema);
 
