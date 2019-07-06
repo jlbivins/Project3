@@ -4,7 +4,7 @@ import './App.css';
 import Login from "./pages/login";
 import SignUp from "./pages/signUp";
 import Main from './pages/main';
-import Questionnaire from './pages/questionnaire';
+import Flowchart from './pages/flowChart';
 import NotFound from './pages/notFound';
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={SignUp} />
           <Route exact path="/index" component={Main} />
-          <Route exact path="/questionnaire/:id" component={Questionnaire} />
+          <Route exact path="/flowchart/:id" component={Flowchart} />
           <Route component={NotFound} />
         </Switch>
       </div>
