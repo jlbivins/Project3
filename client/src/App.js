@@ -16,7 +16,7 @@ function App() {
           <Route exact path="/signup" component={SignUp} />
           <Route exact path="/index" component={Main} />
           <Route exact path="/questionnaire/:id" component={Questionnaire} />
-          <Ropute component={NotFound} />
+          <Route component={NotFound} />
         </Switch>
       </div>
     </Router>
