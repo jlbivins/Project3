@@ -23,7 +23,8 @@ if (process.env.NODE_ENV === "production") {
 }
 // Add routes, both API and view
 app.use(routes);
-//TODO add auth route, passing in passport
+//Add auth route, passing in app and passport
+require("./routes/authRoutes")(app, passport);
 
 //import passport local strategies for login and signup and connect to Users in MongoDB
 require("./config/passport/passport")(passport, User)
