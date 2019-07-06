@@ -5,7 +5,8 @@ class SignInForm extends Component {
         super(props);
         this.state ={
             username: "",
-            password: ""
+            password: "",
+            err: ""
         };
 
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -25,7 +26,13 @@ class SignInForm extends Component {
     }
 
     handleSubmit(event) {
-
+        fetch('/login', {
+            method: 'POST',
+            body: JSON.stringify({
+                username: this.state.username,
+                password: this.state.password
+            })
+        })
     }
 
     render() {

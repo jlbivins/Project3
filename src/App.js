@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import './App.css';
 import Login from "./pages/login";
 import SignUp from "./pages/signUp";
 import Main from './pages/main';
@@ -16,7 +17,7 @@ function App() {
           <Route exact path="/signup" component={SignUp} />
           <Route exact path="/index" component={Main} />
           <Route exact path="/questionnaire/:id" component={Questionnaire} />
-          <Ropute component={NotFound} />
+          <Route component={NotFound} />
         </Switch>
       </div>
     </Router>
