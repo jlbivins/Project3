@@ -11,12 +11,12 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
-    questionnaires: {
+    flowchartIds: {
         type: Schema.Types.ObjectId,
-        ref: "Questions"
+        ref: "Flowcharts"
     }
 });
 
 const User = mongoose.model("User", UserSchema);
 
-module.exports = User;
+export default User;
