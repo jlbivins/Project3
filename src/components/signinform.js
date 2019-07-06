@@ -31,7 +31,7 @@ class SignInForm extends Component {
     render() {
         return (
             <div>
-                <form>
+                <form onSubmit={this.handleSubmit} className="col s12" method="POST">
                     <div className="form-group">
                         <label for="inputUserName">
                             Username:
@@ -39,7 +39,10 @@ class SignInForm extends Component {
                         <input 
                         type="email" 
                         className="form-control" 
-                        id="inputUserName" />
+                        id="inputUserName"
+                        value={this.state.username}
+                        onChange={this.handleInputChange}
+                        required />
                     </div>
                     <div className="form-group">
                         <label for="passwordInput">
@@ -48,7 +51,10 @@ class SignInForm extends Component {
                         <input 
                         type="password" 
                         className="form-control" 
-                        id="passwordInput" />
+                        id="passwordInput"
+                        value={this.state.password}
+                        onChange={this.handleInputChange}
+                        required />
                     </div>
                     <button type="submit" className="btn btn-primary">
                         Submit
