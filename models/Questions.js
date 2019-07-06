@@ -10,19 +10,13 @@ const QuestionSchema = new Schema({
         type: String,
         required: true
     },
-    children: [ChildrenSchema]
-}, {strict: false});
-
-const ChildrenSchema = new Schema({
-    answer: {
-        type: Schema.Types.Mixed,
-        required: true
-    },
-    nextQuestion: {
-        type: Schema.Types.Mixed
+    answerIds: {
+        type: Schema.Types.ObjectId,
+        ref: "Answers"
     }
-}, {strict: false});
+});
+
 
 const Questions = mongoose.model("Questions", QuestionSchema);
 
-module.exports = Questions;
+export default Questions;
