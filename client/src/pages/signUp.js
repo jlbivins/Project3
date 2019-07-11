@@ -1,9 +1,16 @@
 import React from 'react';
+import WelcomeHeader from '../components/WelcomeHeader';
+import LoginForm from '../components/LoginForm';
+import Footer from '../components/Footer';
 
-function SignUp() {
-    <React.Fragment>
-        
-    </React.Fragment>
+function Login() {
+  return (
+    <div>
+      <WelcomeHeader />
+      <LoginForm authenticationRoute="/signup" otherAuth="Login" />
+      <Footer />
+    </div>
+  );
 };
 
-export default SignUp;
+export default Login;

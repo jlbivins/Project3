@@ -1,13 +1,13 @@
-export default (app, passport) => {
+module.exports = (app, passport) => {
     //POST routes for login and signup
     app.post("/login", passport.authenticate("local-login", {
-        successRedirect: "/user",
-        failureRedirect: "/login",
+        successRedirect: "/index",
+        failureRedirect: "/",
         failureFlash: true
     }));
     app.post("/signup", passport.authenticate("local-signup", {
-        successRedirect: "/user",
-        failureRedirect: "/login",
+        successRedirect: "/index",
+        failureRedirect: "/",
         failureFlash: true
     }));
     app.get("/logout", (req, res) => {

@@ -1,10 +1,14 @@
 import React from 'react';
-import Question from '../components/Question/question'
+import FormContainer from "../components/FormContainer/FormContainer"
+import AddButton from "../components/AddButton/AddButton"
+import TextArea from "../components/TextArea/TextArea"
 
 function Questionnaire() {
     return (
         <React.Fragment>
-            <Question/>
+            <FormContainer/>
+            <AddButton/>
+            <TextArea/>
         </React.Fragment>
     )
 };
